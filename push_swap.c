@@ -1,6 +1,6 @@
-#include "../libft.h"
+#include "includes/push_swap.h"
 
-static void initstack(t_list **stack_a, int argc, char **argv)
+static void init_stack(t_list **stack_a, int argc, char **argv)
 {
   t_list *new;
   char **args;
@@ -24,7 +24,7 @@ static void initstack(t_list **stack_a, int argc, char **argv)
 }
 
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
   t_list **stack_a;
   t_list **stack_b;

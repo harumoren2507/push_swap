@@ -1,10 +1,11 @@
+#include "includes/push_swap.h"
 
 int  ft_isnum(char *nb)
 {
   int  i;
 
   i = 0;
-  if (nb[i] = '-')
+  if (nb[i] == '-')
     i++;
   while (nb[i])
   {
@@ -29,7 +30,7 @@ int  ft_dupcheck_num(int tmp, char **args, int i)
 }
 
 
-void  ft_check_args(int argc, char **argv)
+void  ft_check_args(int argc, char const **argv)
 {
   char **args;
   int  i;
@@ -38,7 +39,7 @@ void  ft_check_args(int argc, char **argv)
   i = 0;
   tmp　= 0;
   if (argc == 2)
-    args = ft_split(args, ' ');
+    args = ft_split(args[1], ' ');
   else 
   {
     i = 1;

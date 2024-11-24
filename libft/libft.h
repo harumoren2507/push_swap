@@ -22,11 +22,20 @@
 # include <string.h>
 # include <unistd.h>
 
+/*
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+*/
+
+typedef struct s_list
+{
+	int				value;
+	int				index;
+	struct s_list	*next;
+}				t_list;
 
 int					ft_isalpha(int c);
 int					ft_isalnum(int c);
