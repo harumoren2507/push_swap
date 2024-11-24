@@ -4,6 +4,7 @@ static void init_stack(t_list **stack_a, int argc, char **argv)
 {
   t_list *new;
   char **args;
+  int i;
   i = 0;
 
   if (argc == 2)
@@ -19,8 +20,6 @@ static void init_stack(t_list **stack_a, int argc, char **argv)
     ft_lstadd_back(stack_a, new);
     i++;
   }
-  if (argc == 2)
-    //ft_free(args);
 }
 
 
@@ -39,10 +38,7 @@ int main(int argc, char **argv)
   *stack_b = NULL;
 
   init_stack(stack_a, argc, argv);//たぶん、argvの数字群をstack_aにぶち込む。
-  if (//stack_aがそーとされていた場合の処理)
-  {
-  }
-  //sort;
+  return (0);
 }
 
 /*

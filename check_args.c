@@ -30,16 +30,16 @@ int  ft_dupcheck_num(int tmp, char **args, int i)
 }
 
 
-void  ft_check_args(int argc, char const **argv)
+void  ft_check_args(int argc, char **argv)
 {
   char **args;
   int  i;
   long tmp;
 
   i = 0;
-  tmp　= 0;
+  tmp = 0;
   if (argc == 2)
-    args = ft_split(args[1], ' ');
+    args = ft_split(argv[1], ' ');
   else 
   {
     i = 1;
@@ -56,8 +56,6 @@ void  ft_check_args(int argc, char const **argv)
       return ;
     i++;
   }
-  if (argc == 2)
-    //ft_free(args);
 }
 
 

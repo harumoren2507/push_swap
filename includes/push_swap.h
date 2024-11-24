@@ -23,4 +23,7 @@ typedef struct s_list
 */
 
 
+
+void  ft_check_args(int argc, char **argv);
+
 #endif
