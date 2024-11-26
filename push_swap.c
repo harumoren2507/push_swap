@@ -1,5 +1,7 @@
 #include "includes/push_swap.h"
 
+//ccw lst_utils.c push_swap.c check_args.c libft/libft.a  11/26時点でのコンパイルオプション
+
 static void init_stack(t_list **stack_a, int argc, char **argv)
 {
   t_list *new;
@@ -16,7 +18,7 @@ static void init_stack(t_list **stack_a, int argc, char **argv)
   }
   while (args[i])
   {
-    new = ft_lstnew(ft_atoi(args[i]));
+    new = ft_lstnew_int(ft_atoi(args[i]));
     ft_lstadd_back(stack_a, new);
     i++;
   }
@@ -26,18 +28,24 @@ static void init_stack(t_list **stack_a, int argc, char **argv)
 int main(int argc, char **argv)
 {
   t_list **stack_a;
-  t_list **stack_b;
+  //t_list **stack_b;
 
   if (argc < 2)
     return (1);
   ft_check_args(argc, argv);
-  //wポインタの意味がまだ完全に分かってない。
   stack_a = malloc(sizeof(t_list));
   stack_a = malloc(sizeof(t_list));//  なぜt_list の大きさで良いのか。
   *stack_a = NULL;
-  *stack_b = NULL;
+  //*stack_b = NULL;
 
-  init_stack(stack_a, argc, argv);//たぶん、argvの数字群をstack_aにぶち込む。
+  init_stack(stack_a, argc, argv);
+  t_list *current;
+  current = *stack_a;
+  while (current != NULL)
+  {
+	  printf("%d\n", current->content);
+	  current = current->next;
+  }
   return (0);
 }
 
