@@ -32,7 +32,7 @@ typedef struct s_list
 
 typedef struct s_list
 {
-	int				value;
+	int				content;
 	int				index;
 	struct s_list	*next;
 }				t_list;
