@@ -25,5 +25,5 @@ typedef struct s_list
 
 
 void  ft_check_args(int argc, char **argv);
-
+t_list	*ft_lstnew_int(int content);
 #endif
