@@ -1,6 +1,6 @@
 #include "includes/push_swap.h"
 
-int  ft_isnum(char *nb)
+int  ft_num_false(char *nb)
 {
   int  i;
 
@@ -23,14 +23,13 @@ int  ft_dupcheck_num(int tmp, char **args, int i)
   while (args[i])
   {
     if (tmp == ft_atoi(args[i]))
-      return (0);
+      return (1);
     i++;
   }
-  return (1);
+  return (0);
 }
 
-
-void  ft_check_args(int argc, char **argv)
+int  ft_check_args(int argc, char **argv)
 {
   char **args;
   int  i;
@@ -48,14 +47,15 @@ void  ft_check_args(int argc, char **argv)
   while (args[i])
   {
     tmp = ft_atoi(args[i]);
-    if (!ft_isnum(args[i]))
-      return ;
-    if (ft_dupcheck_num(tmp, args, i))
-      return ;
+    if (ft_num_false(args[i]))
+      return (1);
+    if (ft_dupcheck_num(tmp, args, i) == 1)
+      return (1);
     if (tmp > 2147483647 || tmp < -2147483648)
-      return ;
+      return (1);
     i++;
   }
+  return (0);
 }
 
 
