@@ -2,9 +2,9 @@
 
 //ccw lst_utils.c push_swap.c check_args.c libft/libft.a  11/26時点でのコンパイルオプション
 
-static void init_stack(t_list **stack_a, int argc, char **argv)
+static void init_stack(t_stack **stack_a, int argc, char **argv)
 {
-  t_list *new;
+  t_stack *new;
   char **args;
   int i;
 
@@ -33,7 +33,7 @@ static int	print_error(void)
 
 int main(int argc, char **argv)
 {
-  t_list *stack_a;
+  t_stack *stack_a;
 
   if (argc < 2)
     return (1);
@@ -46,17 +46,15 @@ int main(int argc, char **argv)
 	  ft_lstclear2(&stack_a);
 	  return (SUCCESS);
   }
-  /*
-  t_list *current;
+  t_stack *current;
   current = stack_a;
   while (current != NULL)
   {
-	  printf("%d\n", current->content);
+	  printf("%d\n", current->value);
 	  current = current->next;
   }
   int a = ft_lstsize(stack_a);
   printf("lstsize:%d\n", a);
-  */
   return (SUCCESS);
 }
 
