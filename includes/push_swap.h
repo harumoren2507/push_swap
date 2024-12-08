@@ -5,25 +5,21 @@
 
 /************stack***************/
 
-/*
-typedef struct s_list
-{
-  int value;
-  int index;
-  struct s_list *next;
-}     t_list;
-
-typedef struct s_list
+typedef struct s_stack
 {
         int                             value;
-        int                             index;
-        struct s_list   *next;
-}                               t_list;
+	int	index;
+        struct s_stack   *next;
+}                               t_stack;
 
-*/
+typedef enum s_error {
+	SUCCESS = 0,
+	ERROR = -1,
+} t_error;
 
 
-
-void  ft_check_args(int argc, char **argv);
+/**********prototype************/
+int	ft_lstsize(t_list *lst);
+int  ft_check_args(int argc, char **argv);
 t_list	*ft_lstnew_int(int content);
 #endif
