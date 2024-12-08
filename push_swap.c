@@ -7,6 +7,7 @@ static void init_stack(t_list **stack_a, int argc, char **argv)
   t_list *new;
   char **args;
   int i;
+
   i = 0;
 
   if (argc == 2)
@@ -24,30 +25,42 @@ static void init_stack(t_list **stack_a, int argc, char **argv)
   }
 }
 
+static int	print_error(void)
+{
+	write(2, "Error\n", 6);
+	return (ERROR);
+}
 
 int main(int argc, char **argv)
 {
-  t_list **stack_a;
-  //t_list **stack_b;
+  t_list *stack_a;
 
   if (argc < 2)
     return (1);
-  ft_check_args(argc, argv);
-  stack_a = malloc(sizeof(t_list));
-  stack_a = malloc(sizeof(t_list));//  なぜt_list の大きさで良いのか。
-  *stack_a = NULL;
-  //*stack_b = NULL;
-
-  init_stack(stack_a, argc, argv);
+  if (ft_check_args(argc, argv) == 1)
+	  return (print_error());
+  stack_a = NULL;
+  init_stack(&stack_a, argc, argv);
+  if (issort_number(stack_a))
+  {
+	  ft_lstclear2(&stack_a);
+	  return (SUCCESS);
+  }
+  /*
   t_list *current;
-  current = *stack_a;
+  current = stack_a;
   while (current != NULL)
   {
 	  printf("%d\n", current->content);
 	  current = current->next;
   }
-  return (0);
+  int a = ft_lstsize(stack_a);
+  printf("lstsize:%d\n", a);
+  */
+  return (SUCCESS);
 }
+
+
 
 /*
 
