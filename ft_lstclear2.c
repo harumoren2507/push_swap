@@ -11,7 +11,7 @@ int	ft_lstclear2(t_stack **lst)
 	while (current != NULL)
 	{
 		tmp = current->next;
-		free(current->value);
+		current->value = 0;
     		free(current);
 		current = tmp;
 	}

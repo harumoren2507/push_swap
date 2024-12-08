@@ -19,7 +19,11 @@ typedef enum s_error {
 
 
 /**********prototype************/
-int	ft_lstsize(t_list *lst);
+int	ft_lstsize(t_stack *lst);
 int  ft_check_args(int argc, char **argv);
-t_list	*ft_lstnew_int(int content);
+t_stack	*ft_lstnew_int(int value);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
+int	ft_lstclear2(t_stack **lst);
+t_stack	*ft_lstlast(t_stack *lst);
+bool	issort_number(t_stack *lst);
 #endif
