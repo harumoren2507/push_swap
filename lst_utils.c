@@ -20,6 +20,7 @@ t_stack	*ft_lstnew_int(int	value)
 	if (new_node == NULL)
 		return (NULL);
 	new_node->value = value;
+    new_node->index = NOT_INDEXED;
 	new_node->next = NULL;
 	return (new_node);
 }

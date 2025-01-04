@@ -46,19 +46,28 @@ int main(int argc, char **argv)
 	  ft_lstclear2(&stack_a);
 	  return (SUCCESS);
   }
-  t_stack *current;
-  current = stack_a;
-  while (current != NULL)
-  {
-	  printf("%d\n", current->value);
-	  current = current->next;
-  }
-  int a = ft_lstsize(stack_a);
-  printf("lstsize:%d\n", a);
+  core_sort(&stack_a);
+  /*
+    未検証
+  debug_sort(stack_a);
+  */
   return (SUCCESS);
 }
 
 
+void    debug_sort(t_stack **a)
+{
+    t_stack *current;
+    current = *stack_a;
+    //debug
+    while (current != NULL)
+    {
+        printf("%d\n", current->value);
+        current = current->next;
+    }
+    int a = ft_lstsize(*stack_a);
+    printf("stack_size:%d\n", a);
+}
 
 /*
 

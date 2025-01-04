@@ -1,36 +1,40 @@
 #include "../includes/push_swap.h"
 
-void	ft_ra(stacktop *a)
+void    rotate_a(t_stack *stack_a)
 {
-	t_node	*first;
-	t_node	*last;
+   t_stack *first;
+    t_stack *last;
 
-	if (a->size < 2)
-		return ;
-	first = a->top;
-	a->top = a->top->next;
-	last = a->top;
-	while (last->next != NULL)
-		last = last->next;
-	last->next = first;
-	first-> next = NULL;
-	write(1, "ra\n", 3);
+    if (!*stack_a || !(*stack_a)->next != NULL)
+        return ;
+
+    first = *stack_a;
+    last = *stack_a;
+
+    while (last->next != NULL)
+        last = last->next;
+    *stack_a = first->next;
+    last->next = first;
+    first->next = NULL;
+    write(1, "ra\n", 3);
 }
 
-void	ft_rb(stacktop *b)
+void    rotate_b(t_stack *stack_b)
 {
-	t_node	*first;
-	t_node	*last;
+    t_stack *first;
+    t_stack *last;
 
-	if (b->size < 2)
-		return ;
-	first = b->top;
-	b->top = b->top->next;
-	last = b->top;
-	while (last->next != NULL)
-		last = last->next;
-	last->next = first;
-	first->next = NULL;
-	write(1, "rb\n", 3);
+    if (!*stack_b || !(*stack_b)->next != NULL)
+        return ;
+
+    first = *stack_b;
+    last = *stack_b;
+
+    while (last->next != NULL)
+        last = last->next;
+    *stack_b = first->next;
+    last->next = first;
+    first->next = NULL;
+    write(1, "rb\n", 3);
 }
 

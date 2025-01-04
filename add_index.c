@@ -1,6 +1,6 @@
 #include "includes/push_swap.h"
 
-void    index_stack(t_stack **stack)
+void    add_index_to_stack(t_stack **stack)
 {
     t_stack *current;
     t_stack *min_node;

@@ -1,4 +1,4 @@
-#ifndef PUSH_SWAP_H
+#fndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
@@ -8,9 +8,13 @@
 typedef struct s_stack
 {
         int                             value;
-	int	index;
+	    int	index;
         struct s_stack   *next;
 }                               t_stack;
+
+
+#define NOT_INDEXED -1
+
 
 typedef enum s_error {
 	SUCCESS = 0,
@@ -26,4 +30,7 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new);
 int	ft_lstclear2(t_stack **lst);
 t_stack	*ft_lstlast(t_stack *lst);
 bool	issort_number(t_stack *lst);
+void    radix_sort(t_stack **stack_a, t_stack **stack_b);
+
+int core_sort(t_stack **stack_a);
 #endif

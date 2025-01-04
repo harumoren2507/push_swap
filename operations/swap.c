@@ -36,8 +36,8 @@ void	ft_sb(t_stack **stack_b)
 
 void	ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_sa(*stack_a);
-	ft_sb(*stack_b);
+	ft_sa(&*stack_a);
+	ft_sb(&*stack_b);
 	write(1, "ss\n", 3);
 }
 
@@ -128,6 +128,8 @@ int main(void)
     // メモリ解放
     free_stack(&stack_a);
     free_stack(&stack_b);
+
+    //ssのテスト
 
     return 0;
 }
