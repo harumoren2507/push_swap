@@ -1,4 +1,4 @@
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 bool	issort_number(t_stack *lst)
 {

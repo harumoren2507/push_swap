@@ -54,7 +54,7 @@ int main(int argc, char **argv)
   return (SUCCESS);
 }
 
-
+/*
 void    debug_sort(t_stack **a)
 {
     t_stack *current;
@@ -68,8 +68,6 @@ void    debug_sort(t_stack **a)
     int a = ft_lstsize(*stack_a);
     printf("stack_size:%d\n", a);
 }
-
-/*
 
 typedef struct s_list
 {

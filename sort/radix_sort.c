@@ -1,4 +1,4 @@
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 int get_max_bit(t_stack *stack)
 {
@@ -28,8 +28,8 @@ void    radix_sort(t_stack **stack_a, t_stack **stack_b)
     int i;
     int j;
 
-    max_bits = get_max_bits(stack_a);
-    stack_size = ft_lstsize(stack_a);
+    max_bits = get_max_bit(*stack_a);
+    stack_size = ft_lstsize(*stack_a);
     i = 0;
     j = 0;
 
@@ -37,14 +37,14 @@ void    radix_sort(t_stack **stack_a, t_stack **stack_b)
     {
         while (j < stack_size)
         {
-            if ((((stack_a)->index >> i) & 0x1) == 0x1)
-                ra(stack_a);
+            if ((((*stack_a)->index >> i) & 0x1) == 0x1)
+                rotate_a(stack_a);
             else
-                pb(stack_a, stack_b);
+                push_to_b(stack_a, stack_b);
             j++;
         }
         while (*stack_b)
-            pa(stack_a, stack_b);
+            push_to_a(stack_a, stack_b);
         i++;
     }
 }

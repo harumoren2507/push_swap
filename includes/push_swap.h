@@ -1,4 +1,4 @@
-#fndef PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
@@ -33,4 +33,17 @@ bool	issort_number(t_stack *lst);
 void    radix_sort(t_stack **stack_a, t_stack **stack_b);
 
 int core_sort(t_stack **stack_a);
+
+void    add_index_to_stack(t_stack **stack);
+
+void    push_to_a(t_stack **stack_a, t_stack **stack_b);
+void    push_to_b(t_stack **stack_a, t_stack **stack_b);
+
+void    rotate_a(t_stack **stack_a);
+void    rotate_b(t_stack **stack_b);
+
+void	ft_ss(t_stack **stack_a, t_stack **stack_b);
+void	ft_sb(t_stack **stack_b);
+void	ft_sa(t_stack **stack_a);
+
 #endif

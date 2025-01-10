@@ -38,6 +38,7 @@ void    rotate_b(t_stack **stack_b)
     write(1, "rb\n", 3);
 }
 
+/*
 void    print_stack(t_stack *stack)
 {
     while (stack)
@@ -84,4 +85,4 @@ int main(void)
     rotate_b(&stack_b);
     print_stack(stack_b);
 }
-
+*/
