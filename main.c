@@ -47,15 +47,12 @@ int main(int argc, char **argv)
 	  return (SUCCESS);
   }
   core_sort(&stack_a);
-  /*
-    未検証
-  debug_sort(stack_a);
-  */
+  debug_sort(&stack_a);
   return (SUCCESS);
 }
 
-/*
-void    debug_sort(t_stack **a)
+
+void    debug_sort(t_stack **stack_a)
 {
     t_stack *current;
     current = *stack_a;
@@ -69,6 +66,7 @@ void    debug_sort(t_stack **a)
     printf("stack_size:%d\n", a);
 }
 
+/*
 typedef struct s_list
 {
         int                             value;

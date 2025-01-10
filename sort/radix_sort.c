@@ -35,6 +35,7 @@ void    radix_sort(t_stack **stack_a, t_stack **stack_b)
 
     while (i < max_bits)
     {
+        j = 0;
         while (j < stack_size)
         {
             if ((((*stack_a)->index >> i) & 0x1) == 0x1)

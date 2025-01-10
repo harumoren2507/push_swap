@@ -46,4 +46,5 @@ void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 void	ft_sb(t_stack **stack_b);
 void	ft_sa(t_stack **stack_a);
 
+void    debug_sort(t_stack **stack_a);
 #endif
