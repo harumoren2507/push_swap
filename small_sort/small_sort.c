@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear2.c                                     :+:      :+:    :+:   */
+/*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: retoriya <retoriya@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 06:07:19 by retoriya          #+#    #+#             */
-/*   Updated: 2025/01/15 06:07:22 by retoriya         ###   ########.fr       */
+/*   Created: 2025/01/15 10:21:47 by retoriya          #+#    #+#             */
+/*   Updated: 2025/01/15 11:35:13 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-int	ft_lstclear2(t_stack **lst)
+void	small_sort(t_stack **stack_a)
 {
-	t_stack	*current;
-	t_stack	*tmp;
+	t_stack	*stack_b;
+	int		size;
 
-	if (!lst || !*lst)
-		return (SUCCESS);
-	current = *lst;
-	while (current != NULL)
-	{
-		tmp = current->next;
-		current->value = 0;
-		free(current);
-		current = tmp;
-	}
-	*lst = NULL;
-	return (SUCCESS);
+    stack_b = NULL;
+	size = ft_lstsize(*stack_a);
+	if (size == 2)
+		sort_2(*stack_a);
+	else if (size == 3)
+		sort_3(*stack_a);
+	else if (size == 4)
+		sort_4(*stack_a, stack_b);
+	else if (size == 5)
+		sort_5(*stack_a, stack_b);
 }

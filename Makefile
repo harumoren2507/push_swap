@@ -13,7 +13,15 @@ SRCS = main.c \
 		  sort/add_index.c \
 		  sort/radix_sort.c \
 		  validation/check_args.c \
-		  validation/issort_number.c
+		  validation/issort_number.c \
+		  small_sort/small_sort.c \
+		  small_sort/sort_2.c \
+		  small_sort/sort_3.c \
+		  small_sort/sort_4.c \
+		  small_sort/sort_5.c \
+		  small_sort/utils_sort_4_5.c \
+
+		  
 
 OBJS	= $(SRCS:.c=.o)
 

@@ -10,4 +10,3 @@ bool	issort_number(t_stack *lst)
 	}
 	return (true);
 }
-

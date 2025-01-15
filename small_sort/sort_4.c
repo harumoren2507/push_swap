@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear2.c                                     :+:      :+:    :+:   */
+/*   sort_4.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: retoriya <retoriya@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 06:07:19 by retoriya          #+#    #+#             */
-/*   Updated: 2025/01/15 06:07:22 by retoriya         ###   ########.fr       */
+/*   Created: 2025/01/15 10:36:31 by retoriya          #+#    #+#             */
+/*   Updated: 2025/01/15 11:08:34 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-int	ft_lstclear2(t_stack **lst)
+void	sort_4(t_stack *a, t_stack *b)
 {
-	t_stack	*current;
-	t_stack	*tmp;
+	t_stack	*min;
 
-	if (!lst || !*lst)
-		return (SUCCESS);
-	current = *lst;
-	while (current != NULL)
+	min = find_min(a);
+	while (a->value != min->value)
 	{
-		tmp = current->next;
-		current->value = 0;
-		free(current);
-		current = tmp;
+		if (is_top_half(a, min))
+			rotate_a(&a);
+		else
+			reverse_rotate_a(&a);
 	}
-	*lst = NULL;
-	return (SUCCESS);
+	push_to_b(&a, &b);
+	sort_3(a);
+	push_to_a(&a, &b);
 }

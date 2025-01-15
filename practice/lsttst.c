@@ -11,27 +11,25 @@
 これが、多くのリンクドリスト実装でadd系の関数がダブルポインタを使用する理由
 
 
-void ft_lstadd_back(t_list *lst, t_list *new)
+void	ft_lstadd_back(t_list *lst, t_list *new)
 {
-    if (lst == NULL)
-        lst = new;     //lstが空=NULLの場合、この変更はmainのheadには影響しない。 引数を**lstにした上で*lst = newとする必要がある。
-    else
-        ft_lstlast(lst)->next = new;
+	if (lst == NULL)
+		lst = new;
+			//lstが空=NULLの場合、この変更はmainのheadには影響しない。 引数を**lstにした上で*lst = newとする必要がある。
+	else
+		ft_lstlast(lst)->next = new;
 }
 
 */
 
-
-
 typedef struct s_list
 {
-        int                             content;
-        int                             index;
-        struct s_list   *next;
-}                               t_list;
+	int				content;
+	int				index;
+	struct s_list	*next;
+}					t_list;
 
-
-t_list	*ft_lstnew_int(int	content)
+t_list	*ft_lstnew_int(int content)
 {
 	t_list	*new_node;
 
@@ -43,7 +41,7 @@ t_list	*ft_lstnew_int(int	content)
 	return (new_node);
 }
 
-t_list* ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == NULL)
 		return (NULL);
@@ -54,26 +52,26 @@ t_list* ft_lstlast(t_list *lst)
 	return (lst);
 }
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    if (*lst == NULL)
-	    *lst = new;
-    else
-    {
-	    ft_lstlast(*lst)->next = new;
-    }
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		ft_lstlast(*lst)->next = new;
+	}
 }
 
 int	main(void)
 {
 	t_list	*head;
-	/*
 	t_list	*second;
 	t_list	*third;
-
-	*/
 	t_list	*new_node;
 	t_list	*current;
+
+	/*
+		*/
 	head = NULL;
 	/*
 	second = ft_lstnew_int(2147483647);
@@ -100,4 +98,3 @@ int	main(void)
 		current = current->next;
 	}
 }
-

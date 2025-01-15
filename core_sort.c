@@ -1,20 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   core_sort.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: retoriya <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/15 05:55:04 by retoriya          #+#    #+#             */
+/*   Updated: 2025/01/15 11:36:07 by retoriya         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "includes/push_swap.h"
 
-int core_sort(t_stack **stack_a)
+int	core_sort(t_stack **stack_a)
 {
-	t_stack *stack_b;
-	int	stack_size;
-    
+	t_stack	*stack_b;
+	int		stack_size;
+
 	stack_b = NULL;
 	stack_size = ft_lstsize(*stack_a);
-
-    add_index_to_stack(stack_a);
-    /*
-	if (stack_size <= 3)
-		sort_three(a);
-	if (stack_size <= 5)
-		sort_three(a, b);
-    */
+    if (stack_size <= 5)
+    {
+        small_sort(stack_a);
+        return (0);
+    }
+	add_index_to_stack(stack_a);
 	radix_sort(stack_a, &stack_b);
-    return (0);
+	return (0);
 }
+

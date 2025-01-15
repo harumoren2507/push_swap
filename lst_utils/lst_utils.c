@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-t_stack	*ft_lstnew_int(int	value)
+t_stack	*ft_lstnew_int(int value)
 {
 	t_stack	*new_node;
 
@@ -20,7 +20,7 @@ t_stack	*ft_lstnew_int(int	value)
 	if (new_node == NULL)
 		return (NULL);
 	new_node->value = value;
-    new_node->index = NOT_INDEXED;
+	new_node->index = NOT_INDEXED;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -61,7 +61,6 @@ int	ft_lstsize(t_stack *lst)
 	return (count);
 }
 
-
 /*
 int	main(void)
 {
@@ -70,6 +69,7 @@ int	main(void)
 	t_list	*third;
 	t_list	*new_node;
 	t_list	*current;
+	t_list	*tmp;
 
 	head = ft_lstnew_int(42);
 	second = ft_lstnew_int(2147483647);
@@ -95,7 +95,6 @@ int	main(void)
 		current = current->next;
 	}
 	current = head;
-	t_list *tmp;
 	while (current != NULL)
 	{
 		tmp = current;

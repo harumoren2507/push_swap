@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear2.c                                     :+:      :+:    :+:   */
+/*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: retoriya <retoriya@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 06:07:19 by retoriya          #+#    #+#             */
-/*   Updated: 2025/01/15 06:07:22 by retoriya         ###   ########.fr       */
+/*   Created: 2025/01/15 10:36:20 by retoriya          #+#    #+#             */
+/*   Updated: 2025/01/15 10:54:25 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../includes/push_swap.h"
 
-int	ft_lstclear2(t_stack **lst)
+void	sort_3(t_stack *a)
 {
-	t_stack	*current;
-	t_stack	*tmp;
-
-	if (!lst || !*lst)
-		return (SUCCESS);
-	current = *lst;
-	while (current != NULL)
-	{
-		tmp = current->next;
-		current->value = 0;
-		free(current);
-		current = tmp;
-	}
-	*lst = NULL;
-	return (SUCCESS);
+	if (a == NULL || a->next == NULL || a->next->next == NULL)
+		return ;
+	if (a->value > a->next->value)
+		ft_sa(&a);
+	if (a->next->value > a->next->next->value)
+		reverse_rotate_a(&a);
+	if (a->value > a->next->value)
+		ft_sa(&a);
 }
