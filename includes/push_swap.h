@@ -67,8 +67,7 @@ void				sort_5(t_stack *a, t_stack *b);
 // small_sort_utils
 int					is_top_half(t_stack *stack, t_stack *target);
 t_stack				*find_min(t_stack *stack);
-void                reverse_rotate_a(t_stack **stack_a);
-
+void				reverse_rotate_a(t_stack **stack_a);
 
 void				debug_sort(t_stack **stack_a);
 #endif

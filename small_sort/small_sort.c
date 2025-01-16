@@ -17,7 +17,7 @@ void	small_sort(t_stack **stack_a)
 	t_stack	*stack_b;
 	int		size;
 
-    stack_b = NULL;
+	stack_b = NULL;
 	size = ft_lstsize(*stack_a);
 	if (size == 2)
 		sort_2(*stack_a);

@@ -1,6 +1,16 @@
-#include "includes/push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: retoriya <retoriya@student.42tokyo.jp      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/16 19:42:32 by retoriya          #+#    #+#             */
+/*   Updated: 2025/01/16 19:42:51 by retoriya         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// ccw lst_utils.c push_swap.c check_args.c libft/libft.a  11/26時点でのコンパイルオプション
+#include "includes/push_swap.h"
 
 static void	init_stack(t_stack **stack_a, int argc, char **argv)
 {

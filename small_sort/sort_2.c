@@ -18,7 +18,7 @@ void	sort_2(t_stack *a)
 		return ;
 	else if (a->value > a->next->value)
 		ft_sa(&a);
-    printf("debug_sort2\n");
-    debug_sort(&a);
-    printf("debug\n");
+	printf("debug_sort2\n");
+	debug_sort(&a);
+	printf("debug\n");
 }

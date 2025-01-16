@@ -19,13 +19,12 @@ int	core_sort(t_stack **stack_a)
 
 	stack_b = NULL;
 	stack_size = ft_lstsize(*stack_a);
-    if (stack_size <= 5)
-    {
-        small_sort(stack_a);
-        return (0);
-    }
+	if (stack_size <= 5)
+	{
+		small_sort(stack_a);
+		return (0);
+	}
 	add_index_to_stack(stack_a);
 	radix_sort(stack_a, &stack_b);
 	return (0);
 }
-
