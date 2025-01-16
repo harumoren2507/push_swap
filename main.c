@@ -6,7 +6,7 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 19:42:32 by retoriya          #+#    #+#             */
-/*   Updated: 2025/01/16 19:42:51 by retoriya         ###   ########.fr       */
+/*   Updated: 2025/01/16 22:44:08 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,10 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 
-	if (argc < 2)
-		return (1);
+    if (argc < 2 || (argv[1] && argv[1][0] == '\0'))
+    { 
+        return (0);
+    }
 	if (ft_check_args(argc, argv) == 1)
 		return (print_error());
 	stack_a = NULL;

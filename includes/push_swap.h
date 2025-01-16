@@ -6,7 +6,7 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 06:03:18 by retoriya          #+#    #+#             */
-/*   Updated: 2025/01/15 11:33:57 by retoriya         ###   ########.fr       */
+/*   Updated: 2025/01/16 20:04:36 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ void				ft_sa(t_stack **stack_a);
 
 // small_sort
 void				small_sort(t_stack **stack_a);
-void				sort_2(t_stack *a);
-void				sort_3(t_stack *a);
-void				sort_4(t_stack *a, t_stack *b);
-void				sort_5(t_stack *a, t_stack *b);
+void				sort_2(t_stack **a);
+void				sort_3(t_stack **a);
+void				sort_4(t_stack **a, t_stack **b);
+void				sort_5(t_stack **a, t_stack **b);
 
 // small_sort_utils
 int					is_top_half(t_stack *stack, t_stack *target);

@@ -6,7 +6,7 @@
 /*   By: retoriya <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 05:55:04 by retoriya          #+#    #+#             */
-/*   Updated: 2025/01/15 11:36:07 by retoriya         ###   ########.fr       */
+/*   Updated: 2025/01/16 20:08:35 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	core_sort(t_stack **stack_a)
 	}
 	add_index_to_stack(stack_a);
 	radix_sort(stack_a, &stack_b);
+    debug_sort(stack_a);
 	return (0);
 }
