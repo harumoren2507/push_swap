@@ -6,27 +6,24 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:36:31 by retoriya          #+#    #+#             */
-/*   Updated: 2025/01/16 20:40:00 by retoriya         ###   ########.fr       */
+/*   Updated: 2025/01/17 20:12:42 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void sort_4(t_stack **a, t_stack **b)
+void	sort_4(t_stack **stack_a, t_stack **stack_b)
 {
-    t_stack *min;
-    
-    min = find_min(*a);
-    while ((*a)->value != min->value)
-    {
-        if (is_top_half(*a, min))
-            rotate_a(a);
-        else
-            reverse_rotate_a(a);
-    }
-    
-    push_to_b(a, b);      // 最小値をBに退避
-    sort_3(a);            // 残り3つをソート
-    push_to_a(a, b);      // 最小値を戻す
-}
+	int	min_index;
+	int	stack_size;
 
+	if (!stack_a || !stack_b)
+		return ;
+	stack_size = ft_lstsize(*stack_a);
+	min_index = get_min_index(*stack_a);
+	while ((*stack_a)->index != min_index)
+		rotate_a(stack_a);
+	push_to_b(stack_a, stack_b);
+	sort_3(stack_a);
+	push_to_a(stack_a, stack_b);
+}

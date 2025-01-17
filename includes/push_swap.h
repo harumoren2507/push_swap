@@ -6,7 +6,7 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 06:03:18 by retoriya          #+#    #+#             */
-/*   Updated: 2025/01/16 20:04:36 by retoriya         ###   ########.fr       */
+/*   Updated: 2025/01/17 20:08:55 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ void				sort_5(t_stack **a, t_stack **b);
 // small_sort_utils
 int					is_top_half(t_stack *stack, t_stack *target);
 t_stack				*find_min(t_stack *stack);
-void				reverse_rotate_a(t_stack **stack_a);
+int					get_min_value(t_stack *stack);
+int					get_min_index(t_stack *stack);
 
 void				debug_sort(t_stack **stack_a);
 #endif

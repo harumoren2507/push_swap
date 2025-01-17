@@ -6,55 +6,44 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:36:43 by retoriya          #+#    #+#             */
-/*   Updated: 2025/01/16 20:11:42 by retoriya         ###   ########.fr       */
+/*   Updated: 2025/01/17 20:08:13 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*find_min(t_stack *stack)
+int	get_min_value(t_stack *stack)
 {
-	t_stack	*current;
-	t_stack	*min;
+	t_stack	*temp_list;
+	int		min_value;
 
-	current = stack;
-	min = stack;
-	while (current)
+	if (!stack)
+		return (0);
+	temp_list = stack;
+	min_value = temp_list->value;
+	while (temp_list)
 	{
-		if (current->value < min->value)
-			min = current;
-		current = current->next;
+		if (temp_list->value < min_value)
+			min_value = temp_list->value;
+		temp_list = temp_list->next;
 	}
-	return (min);
+	return (min_value);
 }
 
-int is_top_half(t_stack *stack, t_stack *target)
+int	get_min_index(t_stack *stack)
 {
-    t_stack *current;
-    int position;
-    int size;
-    
-    current = stack;
-    position = 1;  // 1からカウント開始
-    size = 0;
-    
-    while (current)
-    {
-        if (current == target)
-            break;
-        position++;
-        current = current->next;
-    }
-    
-    // サイズを計算
-    current = stack;
-    while (current)
-    {
-        size++;
-        current = current->next;
-    }
-    
-    // 切り上げ除算で比較
-    return (position <= (size + 1) / 2);
-}
+	int		min_index;
+	t_stack	*temp_list;
 
+	if (!stack)
+		return (0);
+	temp_list = stack;
+	min_index = temp_list->index;
+	while (temp_list)
+	{
+		if (temp_list->index < min_index)
+			min_index = temp_list->index;
+		temp_list = temp_list->next;
+	}
+	return (min_index);
+}

@@ -44,10 +44,10 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 
-    if (argc < 2 || (argv[1] && argv[1][0] == '\0'))
-    { 
-        return (0);
-    }
+	if (argc < 2 || (argv[1] && argv[1][0] == '\0'))
+	{
+		return (0);
+	}
 	if (ft_check_args(argc, argv) == 1)
 		return (print_error());
 	stack_a = NULL;

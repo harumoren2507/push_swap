@@ -6,7 +6,7 @@
 /*   By: retoriya <retoriya@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:21:47 by retoriya          #+#    #+#             */
-/*   Updated: 2025/01/16 20:07:22 by retoriya         ###   ########.fr       */
+/*   Updated: 2025/01/17 22:07:43 by retoriya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	small_sort(t_stack **stack_a)
 		sort_4(stack_a, &stack_b);
 	else if (size == 5)
 		sort_5(stack_a, &stack_b);
-    debug_sort(stack_a);
+    ft_lstclear2(stack_a);
+	//debug_sort(stack_a);
 }
